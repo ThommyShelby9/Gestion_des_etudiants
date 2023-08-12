@@ -102,6 +102,10 @@ body {
     color: white;
 }
 
+.main_content_middle{
+    padding-top: 20px;
+}
+
 .main_content_top {
     display: flex;
     justify-content: space-between;

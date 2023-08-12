@@ -7,6 +7,7 @@ import AppVue from '@/App.vue'
 import Etudiants from '@/DashboardLayout/Etudiants.vue';
 import DashboardAccueil from '@/DashboardLayout/DashboardAcceuil.vue'
 import Matiere from '@/DashboardLayout/Matière.vue'
+import AddEtudiant from '@/DashboardLayout/AddEtudiant.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -35,6 +36,10 @@ const router = createRouter({
         {
           path: 'matiere',
           component : Matiere
+        },
+        {
+          path: 'addstudent',
+          component: AddEtudiant
         }
       ]
     },

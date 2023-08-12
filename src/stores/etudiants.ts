@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 import {ref} from 'vue'
 import {computed} from 'vue'
 import {supabase} from '@/lib/supabase'
-type etudiant = {id?:number, nom:string, prenom: string, age: string, genre: string}
+type etudiant = {id?:number, Nom:string, Prenom: string, Age: string, Genre: string}
 
 export const useEtudiantStore = defineStore('etudiant', () => {
     const etudiants= ref<etudiant[]>([])
@@ -33,12 +33,12 @@ export const useEtudiantStore = defineStore('etudiant', () => {
         }
     }
 
-
-     async function addEtudiant(Etudiant: etudiant) {
-        const {data,error} = await supabase.from('Etudiants').insert(Etudiant).select("*")
+    async function addstudent(Etudiant: etudiant) {
+        const {data,error} = await supabase.from('Etudiants').insert(Etudiant)
         if(data){
             etudiants.value.push(data[0])
         }
+
     } 
     
    /*   const userName = computed(() =>{
@@ -51,5 +51,5 @@ export const useEtudiantStore = defineStore('etudiant', () => {
 
 
     
-    return {etudiants, initialise, UserInitialise, userData};
+    return {etudiants, initialise, UserInitialise, userData, addstudent};
 })
