@@ -7,6 +7,8 @@ type etudiant = {id?:number, Nom:string, Prenom: string, Age: string, Genre: str
 export const useEtudiantStore = defineStore('etudiant', () => {
     const etudiants= ref<etudiant[]>([])
     const UserInitialise = ref('')
+    const dataConnection = ref()
+    const UserConnectData = ref()
     async function initialise(){
         const result = await supabase.from('Etudiants').select("*")
         console.log(result.data)
@@ -22,14 +24,21 @@ export const useEtudiantStore = defineStore('etudiant', () => {
         }
     } */
 
-
+    const dataConnect = ref()
     async function userData(){
         const {data} = await supabase.auth.getSession()
         if(data.session){
             const UserInitialise = data.session?.user.email
             console.log(UserInitialise)
-            const getUser = await supabase.auth.getUser
-            return {UserInitialise, getUser};
+            dataConnection.value = await supabase.from('Etudiants').select('idUser')
+            dataConnect.value = await supabase.from('InscriptionUser').select('id')
+            console.log(dataConnection)
+            console.log(dataConnect)
+      /*   if(dataConnection === UserConnectData){
+         return etudiants.value
+        }else{
+            return etudiants.value = []
+        } */
         }
     }
 
@@ -51,5 +60,5 @@ export const useEtudiantStore = defineStore('etudiant', () => {
 
 
     
-    return {etudiants, initialise, UserInitialise, userData, addstudent};
+    return {etudiants, initialise, UserInitialise, userData, addstudent, dataConnection, dataConnect};
 })

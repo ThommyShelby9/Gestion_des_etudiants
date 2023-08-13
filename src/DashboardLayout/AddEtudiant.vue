@@ -22,14 +22,14 @@ import { storeToRefs } from 'pinia';
 const {etudiants} = storeToRefs(useEtudiantStore())
 const {addstudent } = useEtudiantStore()
 
-
-
 const studentData = ref({
     Nom: '',
     Prenom: '',
     Age: '',
     Genre: ''
 })
+
+
 
 const createEtudiant = async () => {
     await addstudent(studentData.value)

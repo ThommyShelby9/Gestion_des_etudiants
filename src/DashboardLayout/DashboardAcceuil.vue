@@ -6,7 +6,7 @@ import { storeToRefs } from 'pinia';
 import { useUserStore } from '@/stores/user'; 
 import { onMounted, ref } from 'vue';
 const { userData } = useUserStore()
-const { users, UserInitialise, UserConnectData } = storeToRefs(useUserStore())
+const { users, UserInitialise, UserConnectData, } = storeToRefs(useUserStore())
 
 onMounted(async () => {
     await userData()

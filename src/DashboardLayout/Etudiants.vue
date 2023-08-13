@@ -8,7 +8,7 @@ import AddEtudiant from './AddEtudiant.vue';
 const  { userData } = useUserStore()
 const {UserInitialise, UserConnectData} = storeToRefs(useUserStore())
 const { initialise } = useEtudiantStore()
-const { etudiants } = storeToRefs(useEtudiantStore())
+const { etudiants, dataConnection,dataConnect } = storeToRefs(useEtudiantStore())
 const router = useRouter()
 
 
@@ -16,8 +16,12 @@ const router = useRouter()
 onMounted(async () => {
     await initialise()
     await userData()
+    console.log(dataConnection)
     console.log(UserConnectData)
+    console
 }) 
+/* const verifyId = dataConnection.value.find(item =>(item.idUser === dataConnect.value.find(item =>(item.id)) )) */
+
 
 
 
