@@ -17,6 +17,14 @@ const router = createRouter({
       component: Acceuil
     },
     {
+      path: '/inscription_user',
+      component: InscriptionUser
+    },
+    {
+      path: '/connexion',
+      component: Connexion
+    },
+    {
       path: '/dashboard',
       component: Dashboard,
      /*  beforeEnter:[
@@ -43,14 +51,7 @@ const router = createRouter({
         }
       ]
     },
-    {
-      path: '/inscription_user',
-      component: InscriptionUser
-    },
-    {
-      path: '/connexion',
-      component: Connexion
-    }
+    
     
   ]
 })
