@@ -3,7 +3,6 @@ import { supabase } from '@/lib/supabase'
 import { ref } from 'vue'
 import { useUserStore } from '@/stores/user'
 import router from '@/router';
-import { connected } from 'process';
 const { addUser } = useUserStore()
 const Error = ref('')
 /* const emits = defineEmits(['submit']) */
