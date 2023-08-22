@@ -1,8 +1,6 @@
 <script lang="ts" setup>
 import ImageAcceuil from '@/components/icons/ImageAcceuil.vue';
 import { useUserStore } from '@/stores/user';
- import { useRouter } from 'vue-router'
-import { storeToRefs } from 'pinia' 
 import { onMounted } from 'vue';
 const { initialise } = useUserStore()
 /* const { users } = storeToRefs(useUserStore())
@@ -26,7 +24,12 @@ onMounted(async () => {
                             Bienvenue <span>Super Admin</span>
                         </p>
                         <div class="main_content_left_bottom">
-                            <a href="/inscription_user">Inscription</a> | <a href="/connexion">Connexion</a>
+                            <router-link to="/inscription_user">
+                                Inscription
+                             </router-link>
+                            |<router-link to="/connexion">
+                                Connexion
+                             </router-link>
                         </div>
                         <h4>Mais n'oublie pas, de grands pouvoirs impliquent de grandes responsabilités.</h4>
                     </div>
