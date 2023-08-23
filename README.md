@@ -42,3 +42,6 @@ npm run build
 Pour la connexion
 email = luc@gmail.com
 password = missimawu
+
+lien de deploiement
+https://main--gestion-des-etudiants.netlify.app/
