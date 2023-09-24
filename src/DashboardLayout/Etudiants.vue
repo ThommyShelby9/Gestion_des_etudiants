@@ -4,7 +4,6 @@ import { useRouter } from 'vue-router'
 import { storeToRefs } from 'pinia'
 import { onMounted } from 'vue';
 import {useUserStore} from '@/stores/user'
-import AddEtudiant from './AddEtudiant.vue';
 const  { userData } = useUserStore()
 const {UserInitialise, UserConnectData} = storeToRefs(useUserStore())
 const { initialise } = useEtudiantStore()

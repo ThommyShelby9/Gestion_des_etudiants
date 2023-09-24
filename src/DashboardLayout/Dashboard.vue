@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import {supabase} from '@/lib/supabase'
 import { RouterLink, RouterView, useRouter } from 'vue-router'
-import AsideBarLogo from '../DashboardLayout/AsideBarLogo.vue';
-import { defineStore } from 'pinia';
 import { storeToRefs } from 'pinia';
 import {useUserStore} from '@/stores/user' 
 import { onMounted, ref, } from 'vue';

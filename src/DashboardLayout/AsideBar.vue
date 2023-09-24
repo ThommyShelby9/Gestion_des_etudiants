@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { RouterLink, RouterView } from 'vue-router'
 import AsideBarLogo from '../DashboardLayout/AsideBarLogo.vue';
-import { defineStore } from 'pinia';
 import { storeToRefs } from 'pinia';
 import { useUserStore } from '@/stores/user';
 import { onMounted, ref } from 'vue';
@@ -23,30 +22,30 @@ onMounted(async () => {
                     <p>{{ UserConnectData }}</p>
                 </div>
                 <ul>
-                    <a href="/dashboard">
+                    <router-link to="/dashboard">
                         <li>
                             <AsideBarLogo />
                             Dashboard
                         </li>
-                    </a>
-                    <a href="/dashboard/etudiant">
+                    </router-link>
+                    <router-link to="/dashboard/etudiant">
                         <li>
                             <AsideBarLogo />
                             Etudiants
                         </li>
-                    </a>
-                    <a href="/dashboard/matiere">
+                    </router-link>
+                    <router-link to="/dashboard/matiere">
                         <li>
                             <AsideBarLogo />
-                            Matières
+                            Matiere
                         </li>
-                    </a>
-                    <a href="#">
+                    </router-link>
+                    <router-link to="/dashboard">
                         <li>
                             <AsideBarLogo />
                             Dashboard
                         </li>
-                    </a>
+                    </router-link>
                 </ul>
                 <div class="asidebar_bottom">
                     &copy;All Rigths Reserved

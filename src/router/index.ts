@@ -8,6 +8,7 @@ import Etudiants from '@/DashboardLayout/Etudiants.vue';
 import DashboardAccueil from '@/DashboardLayout/DashboardAcceuil.vue'
 import Matiere from '@/DashboardLayout/Matière.vue'
 import AddEtudiant from '@/DashboardLayout/AddEtudiant.vue';
+import ErrorVue from '@/views/Error.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -50,6 +51,11 @@ const router = createRouter({
     {
       path: '/connexion',
       component: Connexion
+    },
+    {
+      path: '/:catchAll(.*)*',
+      name : 'PageNotFound',
+      component : ErrorVue
     }
     
   ]
