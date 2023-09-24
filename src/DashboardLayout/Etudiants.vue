@@ -51,8 +51,8 @@ onMounted(async () => {
                         <th>Age</th>
                         <th>Genre</th>
                     </tr>
-                    <tbody>
-                        <tr v-for="element in etudiants">
+                    <tbody v-for="element in etudiants">
+                        <tr v-if="element.email_user == UserConnectData">
                             <td>{{ element.id }}</td>
                             <td>{{ element.Nom }}</td>
                             <td>{{ element.Prenom }}</td>

@@ -15,20 +15,28 @@
 
 <script lang="ts" setup>
 import { supabase } from '@/lib/supabase'
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useEtudiantStore } from '@/stores/etudiants'
 import router from '@/router';
 import { storeToRefs } from 'pinia';
 const {etudiants} = storeToRefs(useEtudiantStore())
 const {addstudent } = useEtudiantStore()
+import { useUserStore } from '@/stores/user'; 
+const { userData } = useUserStore()
+const { users, UserInitialise, UserConnectData, } = storeToRefs(useUserStore())
+
+/* console.log(UserConnectData) */
+
+let email = UserConnectData
+console.log(email)
 
 const studentData = ref({
     Nom: '',
     Prenom: '',
     Age: '',
-    Genre: ''
+    Genre: '',
+    email_user: email
 })
-
 
 
 const createEtudiant = async () => {

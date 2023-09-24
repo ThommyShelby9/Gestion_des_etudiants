@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 import {ref} from 'vue'
 import {computed} from 'vue'
 import {supabase} from '@/lib/supabase'
-type etudiant = {id?:number, Nom:string, Prenom: string, Age: string, Genre: string}
+type etudiant = {id?:number, Nom:string, Prenom: string, Age: string, Genre: string, email_user: string}
 
 export const useEtudiantStore = defineStore('etudiant', () => {
     const etudiants= ref<etudiant[]>([])
@@ -14,7 +14,7 @@ export const useEtudiantStore = defineStore('etudiant', () => {
         console.log(result.data)
         if(result.data)
         etudiants.value = result.data
-    }
+    } 
 
    /*   async function userData(){
         const {data} = await supabase.auth.getSession()
